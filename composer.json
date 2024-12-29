@@ -1,0 +1,18 @@
+{
+    "name": "mattressdirect/mattressdirect",
+    "description": "MattressDirect - Buy mattress online",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [],
+        "post-update-cmd": []
+    }
+}
