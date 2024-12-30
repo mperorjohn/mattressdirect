@@ -16,7 +16,7 @@ $price = 512000;
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
+  <meta name="author" content="John Oyekola">
   <link rel="shortcut icon" href="favicon.png">
 
   <meta name="description" content="" />

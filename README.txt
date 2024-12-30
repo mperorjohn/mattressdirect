@@ -22,7 +22,7 @@ Welcome to Mattress Direct! This project is a web application for browsing and p
     ```
 3. Install dependencies:
     ```
-    compose install
+    composer install
     ```
 
 ## Usage
