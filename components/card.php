@@ -24,7 +24,7 @@ for ($i = 0; $i < 12; $i++) {
             <div class="card-body">
                 <p class="card-title">Product 2</p>
                 <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="card-text fw-bold mb-0" style="color:#4169E1;">#512,000.00</h5>
+                    <h5 class="card-text fw-bold mb-0" style="color:#04048C;">#512,000.00</h5>
                     <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-cart-plus"></i></a>
                 </div>
             </div>

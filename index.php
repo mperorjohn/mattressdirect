@@ -7,17 +7,19 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+
+
 ?>
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
+  <meta name="author" content="John Oyekola">
   <link rel="shortcut icon" href="favicon.png">
 
   <meta name="description" content="" />
- <meta name="keywords" content="<?php echo isset($_ENV['APP_DESCRIPTION']) ? $_ENV['APP_DESCRIPTION'] : ''; ?>" />
+  <meta name="keywords" content="<?php echo isset($_ENV['APP_DESCRIPTION']) ? $_ENV['APP_DESCRIPTION'] : ''; ?>" />
 
 		<!-- Bootstrap CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,24 +36,25 @@ $dotenv->load();
 		
 		<!-- End Header/Navigation -->
 		<!-- Start Banner Carousel -->
+		<div class="container">
 		<div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="images/bowl-2.png" class="d-block mx-auto" alt="Banner 1" style="height: 500px; width: auto;">
+					<img src="images/Banner.jpg" class="d-block mx-auto img-fluid" alt="Banner 1">
 					<div class="carousel-caption d-none d-md-block">
 						<!-- <h5>First Slide</h5>
 						<p>First slide description.</p> -->
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="images/sofa.png" class="d-block mx-auto" alt="Banner 2" style="height: 500px; width: auto;">
+					<img src="images/sofa.png" class="d-block mx-auto img-fluid" alt="Banner 2">
 					<div class="carousel-caption d-none d-md-block">
 						<!-- <h5>Second Slide</h5>
 						<p>Second slide description.</p> -->
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="images/product-2.png" class="d-block mx-auto" alt="Banner 3" style="height: 500px; width: auto;">
+					<img src="images/product-2.png" class="d-block mx-auto img-fluid" alt="Banner 3">
 					<div class="carousel-caption d-none d-md-block">
 						<!-- <h5>Third Slide</h5>
 						<p>Third slide description.</p> -->
@@ -67,11 +70,12 @@ $dotenv->load();
 				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
+		</div>
 		<!-- End Banner Carousel -->
 		<!-- Start Best Selling Section -->
 		<div class="container my-2">
 			<div class="p-3">
-				<h2 class="text-left mb-4" style="color:#4169E1;">Best Selling Big Brand Mattresses</h2>
+				<h2 class="text-left mb-4 text-primary">Best Selling Big Brand Mattresses</h2>
 			</div>
 			<hr>
 		</div>
@@ -91,18 +95,15 @@ $dotenv->load();
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
-								<h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
-								<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+								<h1>Comfortable and Affordable <span class="d-block">Mattresses</span></h1>
+								<p class="mb-4">Experience the best sleep of your life with our top-quality mattresses. Designed for comfort and durability, our mattresses are perfect for every home.</p>
 								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
 							</div>
 						</div>
 						<div class="col-lg-7">
 							<div class="hero-img-wrap">
-								<!-- <img src="images/Bed-removebg-preview.png" height="700" width="700" class="img-fluid"> -->
 								<img src="https://lh3.googleusercontent.com/glsgmb/AMnFcuokhjCC0dhs6B_1pKJNysSfXa0HxBnDZlbaRaoPg2Tyb9myVCnrFJGCJTtuppvW9RWjGP6HjnWH2DE-A3xIaidJDg=w304-h406-k-no-rj-sc0x00ffffff" height="700" width="700" class="img-fluid">
-								<!-- https://lh3.googleusercontent.com/glsgmb/AMnFcuokhjCC0dhs6B_1pKJNysSfXa0HxBnDZlbaRaoPg2Tyb9myVCnrFJGCJTtuppvW9RWjGP6HjnWH2DE-A3xIaidJDg=w304-h406-k-no-rj-sc0x00ffffff -->
-								<!-- <img src="images/couch.png" class="img-fluid"> -->
-								<!-- https://e7.pngegg.com/pngimages/50/5120000/png-clipart-serta-mattress-firm-pillow-bedding-mattress-furniture-mattress-thumbnail.png -->
+								
 							</div>
 						</div>
 					</div>
@@ -310,103 +311,7 @@ $dotenv->load();
 		</div>
 		<!-- End Popular Product -->
 
-		<!-- Start Testimonial Slider -->
-		<div class="testimonial-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7 mx-auto text-center">
-						<h2 class="section-title">Testimonials</h2>
-					</div>
-				</div>
-
-				<div class="row justify-content-center">
-					<div class="col-lg-12">
-						<div class="testimonial-slider-wrap text-center">
-
-							<div id="testimonial-nav">
-								<span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
-								<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
-							</div>
-
-							<div class="testimonial-slider">
-								
-								<div class="item">
-									<div class="row justify-content-center">
-										<div class="col-lg-8 mx-auto">
-
-											<div class="testimonial-block text-center">
-												<blockquote class="mb-5">
-													<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-												</blockquote>
-
-												<div class="author-info">
-													<div class="author-pic">
-														<img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-													</div>
-													<h3 class="font-weight-bold">Maria Jones</h3>
-													<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div> 
-								<!-- END item -->
-
-								<div class="item">
-									<div class="row justify-content-center">
-										<div class="col-lg-8 mx-auto">
-
-											<div class="testimonial-block text-center">
-												<blockquote class="mb-5">
-													<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-												</blockquote>
-
-												<div class="author-info">
-													<div class="author-pic">
-														<img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-													</div>
-													<h3 class="font-weight-bold">Maria Jones</h3>
-													<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div> 
-								<!-- END item -->
-
-								<div class="item">
-									<div class="row justify-content-center">
-										<div class="col-lg-8 mx-auto">
-
-											<div class="testimonial-block text-center">
-												<blockquote class="mb-5">
-													<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-												</blockquote>
-
-												<div class="author-info">
-													<div class="author-pic">
-														<img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-													</div>
-													<h3 class="font-weight-bold">Maria Jones</h3>
-													<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div> 
-								<!-- END item -->
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Testimonial Slider -->
+		<?php include 'components/testimonial.php'; ?>
 
 		<!-- Start Blog Section -->
 		<div class="blog-section">

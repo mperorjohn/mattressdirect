@@ -26,7 +26,8 @@ $price = 512000;
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+		<link href="./css/style.css" rel="stylesheet">
+		<!-- <link rel="stylesheet" href="./css/style.css"> -->
 		<title><?php echo isset($_ENV['APP_NAME']) ? $_ENV['APP_NAME'] : 'Default App Name'; ?> | Details</title>
 
 
@@ -93,7 +94,7 @@ $price = 512000;
 			<div class="col-md-6">
 				<div class="product-details card p-5">
 					<p class="fs-5">Mouka Foam</p>
-					<h2 class="price fw-bold" style="color:#4169E1;">#<?php echo is_numeric($price) ? number_format($price, 0, '.', ',') : '00'; ?>.00</h2>
+					<h2 class=" text-primary fw-bold price" >#<?php echo is_numeric($price) ? number_format($price, 0, '.', ',') : '00'; ?>.00</h2>
 					<span>Brand: <span style="font-weight: bold;color:grey;">Mouka</span></span>
 					<span >Product Code: <span style="color:grey;">88DBEHHW</span> </span>
 					<span >Availability: <span style="color:green;">In Stock</span> </span>
@@ -102,20 +103,20 @@ $price = 512000;
 						<hr>
 						<span class="mt-5 mb-5"></span>
 						<p>...</p>
-						<hr>
+						<hr class="mt-5">
 					</div>
 
 					<div>
 						<p class="fs-3">Available Options</p>
-						<form action="">
+						<form action="" method="post">
 							<div class="form-group">
 								<label for="size">Mattress Sizes <span class="text-danger fw-bold">*</span></label>
 								<select class="form-select" id="size">
-									<option class="form-contolol" selected>-- Please Select Size --</option>
-									<option class="form-contolol" value="1">Single</option>
-									<option  class="form-contolol" value="2">Double</option>
-									<option class="form-contolol"  value="3">Queen</option>
-									<option class="form-contolol" value="4">King</option>
+								<option class="form-contolol" value="5">6 x 6 (50,000)</option>
+								<option class="form-contolol" value="6">6 x 7 (55,000)</option>
+								<option class="form-contolol" value="7">7 x 7 (60,000)</option>
+								<option class="form-contolol" value="8">8 x 8 (65,000)</option>
+								<option class="form-contolol" value="9">9 x 9 (70,000)</option>
 								</select>
 							</div>
 							
@@ -123,17 +124,32 @@ $price = 512000;
 								<label for="quantity" class="me-3">Qty</label>
 								<input type="number" class="form-control text-center me-3" id="quantity" value="1" min="1" style="width: 80px;">
 								<input type="hidden" name="totalPrice" id="totalPrice" value="<?php echo $price; ?>">
-								<button class="fw-bold btn btn-primary" style="border-radius:0px ! important;">+ Add to Cart</button>
+								<button class="fw-bold btn btn-primary" style="border-radius:5px ! important;">+ Add to Cart</button>
 							</div>
-							<hr>
+							<hr >
 							<p class="text-center fs-5">Checkout</p>
-							<div class="form-group d-flex align-items-center mt-3">
-								<label for="quantity" class="me-3">Qty</label>
-								<input type="number" class="form-control text-center me-3" id="quantity" value="1" min="1" style="width: 80px;">
-								<input type="hidden" name="totalPrice" id="totalPrice" value="<?php echo $price; ?>">
-								<button class="fw-bold btn btn-primary" style="border-radius:0px ! important;">+ Add to Cart</button>
+							<div class="form-group d-flex align-items-center justify-content-center ">
+								<div class="feature text-center me-5">
+									<div class="icon">
+										<img src="images/truck.svg" alt="Image" class="img-fluid">
+									</div>
+									<p class="text-success">Fast &amp; Free Shipping</p>
+								</div>
+								<!--  -->
+								<div class="feature text-center me-5">
+									<div class="icon">
+										<img src="images/bag.svg" alt="Image" class="imf-fluid">
+									</div>
+									<p class="text-success">Easy to Shop</p>
+								</div>
+								<!--  -->
+								<div class="feature text-center me-5">
+									<div class="icon">
+										<img src="images/support.svg" alt="Image" class="imf-fluid">
+									</div>
+									<p class="text-success">24/7 Support</p>
+								</div>
 							</div>
-							
 						</form>
 					</div>
 				</div>

@@ -67,15 +67,7 @@ $dotenv->load();
 		            <div class="form-group">
 		              <label for="c_country" class="text-black">Country <span class="text-danger">*</span></label>
 		              <select id="c_country" class="form-control">
-		                <option value="1">Select a country</option>    
-		                <option value="2">bangladesh</option>    
-		                <option value="3">Algeria</option>    
-		                <option value="4">Afghanistan</option>    
-		                <option value="5">Ghana</option>    
-		                <option value="6">Albania</option>    
-		                <option value="7">Bahrain</option>    
-		                <option value="8">Colombia</option>    
-		                <option value="9">Dominican Republic</option>    
+		                <option selected value="1">Nigeria</option>    
 		              </select>
 		            </div>
 		            <div class="form-group row">
@@ -86,13 +78,6 @@ $dotenv->load();
 		              <div class="col-md-6">
 		                <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
 		                <input type="text" class="form-control" id="c_lname" name="c_lname">
-		              </div>
-		            </div>
-
-		            <div class="form-group row">
-		              <div class="col-md-12">
-		                <label for="c_companyname" class="text-black">Company Name </label>
-		                <input type="text" class="form-control" id="c_companyname" name="c_companyname">
 		              </div>
 		            </div>
 
