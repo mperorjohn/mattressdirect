@@ -40,15 +40,15 @@ $dotenv->load();
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
 								<h1>Contact</h1>
-								<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+								<p class="mb-4">Feel free to reach out to us with any questions or concerns. Our team is here to help you find the perfect mattress for your needs.</p>
+								<p><a href="" class="btn btn-secondary me-2">Shop Now</a></p>
 							</div>
 						</div>
-						<div class="col-lg-7">
-							<div class="hero-img-wrap">
-								<img src="images/couch.png" class="img-fluid">
-							</div>
-						</div>
+            <div class="col-lg-7">
+              <div class="hero-img-wrap">
+                <img src="images/Pillow.png" class="img-fluid w-100">
+              </div>
+            </div>
 					</div>
 				</div>
 			</div>
@@ -75,7 +75,7 @@ $dotenv->load();
                       </svg>
                     </div> <!-- /.icon -->
                     <div class="service-contents">
-                      <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+                      <p class="text-primary"><?php echo $_ENV['APP_ADDRESS'] ;?></p>
                     </div> <!-- /.service-contents-->
                   </div> <!-- /.service -->
                 </div>
@@ -101,7 +101,7 @@ $dotenv->load();
                       </svg>
                     </div> <!-- /.icon -->
                     <div class="service-contents">
-                      <p>+1 294 3925 3939</p>
+                      <p class="text-primary"><?php echo $_ENV['APP_CONTACT'] ;?></p>
                     </div> <!-- /.service-contents-->
                   </div> <!-- /.service -->
                 </div>

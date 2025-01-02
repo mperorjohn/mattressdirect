@@ -49,30 +49,9 @@ $dotenv->load();
                 </div>
             </div>
         <!-- End Hero Section -->
-
-
-        <div class="untree_co-section before-footer-section mb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="block">
-                            <div class="block-header">
-                                <a class="navbar-brand" href="index.php">Furni<span>.</span></a>
-                            </div>
-                            <div class="block-body mb-5">
-                                <form method="post" onsubmit="return validateForm()">
-                                    
-
-                                    <div>
-                                        <p>Already have an account? <a href="login.php">Login here</a></p>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
+            
+    
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
