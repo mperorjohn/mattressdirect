@@ -46,30 +46,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 #04048C
 
-
-
- if (data.status === true) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: 'Login successful',
-                    showConfirmButton: true,
-                    confirmButtonText: 'OK',
-                    background: '#04048C',
-                    color: '#DCDC00'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location = 'index.php'; // Redirect only after viewing response
-                    }
-                });
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: data.message,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    background: '#f8d7da',
-                    color: '#721c24'
-                });
-            }
