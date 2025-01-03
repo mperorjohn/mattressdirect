@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -6,7 +8,6 @@ require __DIR__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-
 
 
 ?>
@@ -97,7 +98,7 @@ $dotenv->load();
 							<div class="intro-excerpt">
 								<h1>Comfortable and Affordable <span class="d-block">Mattresses</span></h1>
 								<p class="mb-4">Experience the best sleep of your life with our top-quality mattresses. Designed for comfort and durability, our mattresses are perfect for every home.</p>
-								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+								<p><a href="shop.php" class="btn btn-secondary me-2">Shop Now</a></p>
 							</div>
 						</div>
 						<div class="col-lg-7">

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -29,6 +31,13 @@ $brands  = [
 ];
 
 
+// print_r($brands);
+// die;
+
+// // Debugging code to check brands array
+// echo '<pre>';
+// print_r($brands);
+// echo '</pre>';
 
 ?>
 <!doctype html>

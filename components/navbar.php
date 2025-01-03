@@ -14,10 +14,32 @@ foreach ($_SERVER as $key => $value) {
     }
 }
 
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Session Timeout :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// Set session timeout (in seconds), e.g., 10 minutes = 600 seconds
+$timeout_duration = 86400;
+
+// Check if the session exists and the last activity time
+if (isset($_SESSION['last_activity'])) {
+    $session_lifetime = time() - $_SESSION['last_activity']; // Time since last activity
+
+    if ($session_lifetime > $timeout_duration) {
+        // Session has timed out, destroy it
+        session_unset();
+        session_destroy();
+        header("Location: login.php"); // Redirect to login or timeout page
+        exit();
+    }
+}
+
+// Update last activity time
+$_SESSION['last_activity'] = time();
+
+$check_login = isset($_SESSION['user']) && !empty($_SESSION['user']);
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: End Session Timeout ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ?>
-
 <!-- Start Header/Navigation -->
 <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
     <div class="container">
@@ -77,16 +99,30 @@ foreach ($_SERVER as $key => $value) {
 
             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="images/user.svg" alt="User">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="images/user.svg" alt="User" class="me-2"><span class="fw-bold"><?php echo $check_login?  $_SESSION['user']->first_name : ''; ?></span>
                     </a>
                     <ul class="dropdown-menu bg-white text-primary" aria-labelledby="loginDropdown">
-                        <li><a class="dropdown-item" href="login.php">LOGIN</a></li>
-                        <li><a class="dropdown-item" href="register.php">REGISTER</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $check_login ? 'logout.php' : 'login.php'; ?>"><?php echo isset($_SESSION['user']) && !empty($_SESSION['user']) ? 'LOGOUT ' : 'LOGIN'; ?></a></li>
+                        <?php if (!$check_login): ?>
+                            <li><a class="dropdown-item" href="register.php">REGISTER</a></li>
+                        <?php endif; ?>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cart.php"><img src="images/cart.svg" alt="Cart"></a>
+                    <a class="nav-link position-relative" href="cart.php">
+                        <img src="images/cart.svg" alt="Cart">
+                        <?php
+                        // Assuming you have a function or variable that gives you the cart item count
+                        $cartItemCount = 3; // Replace this with your actual cart item count logic
+                        if ($cartItemCount > 0) {
+                            echo '<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">';
+                            echo $cartItemCount;
+                            echo '<span class="visually-hidden">unread messages</span>';
+                            echo '</span>';
+                        }
+                        ?>
+                    </a>
                 </li>
             </ul>
         </div>
