@@ -9,11 +9,6 @@ $dotenv->load();
 
 
 ?>
-
-
-
-
-
 		<!-- Start Footer Section -->
 		<footer class="footer-section">
 			<div class="container relative">
@@ -63,9 +58,9 @@ $dotenv->load();
 						<div class="row links-wrap">
 							<div class="col-6 col-sm-6 col-md-3">
 								<ul class="list-unstyled">
-									<li><a href="about.php">About us</a></li>
+									<li><a href="index.php">Home</a></li>
 									<li><a href="pillow.php">pillow</a></li>
-									<li><a href="blog.php">Blog</a></li>
+									<li><a href="blog.php">Brands</a></li>
 									<li><a href="contact.php">Contact us</a></li>
 								</ul>
 							</div>

@@ -41,7 +41,45 @@ $check_login = isset($_SESSION['user']) && !empty($_SESSION['user']);
 
 ?>
 <!-- Start Header/Navigation -->
-<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+ <div class="bg-primary mb-0" style="background-color: #04048C !important; color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 text-center text-md-start">
+               <button class="btn btn-secondary mt-3 mb-3" style="border:2px solid red;" onclick="window.location='guide.php'">Wise buyer only !</button>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end">
+                <p class="fs-6 mt-0 mb-0">Contact: <?php echo $_ENV['APP_CONTACT']; ?></p>
+            </div>  
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 text-center text-md-start">
+                <p class="fs-6 mb-0">Follow us: 
+                    <span class="me-2"><a href="#"><span style="color:white !important;" class="fa fa-brands fa-facebook-f"></a></span>	
+                    <span class="me-2"><a href="#"><span style="color:white !important;" class="fa fa-brands fa-twitter"></span></a></span>
+                    <span class="me-2"><a href="#"><span style="color:white !important;" class="fa fa-brands fa-instagram"></span></a></span>
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <form action="" method="GET" class="d-flex">
+                    <input type="text" name="search" id="" class="form-control" placeholder="Search...">
+                    <button type="submit" class="btn btn-secondary ms-2">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="col-12 col-md-4 text-center text-md-end">
+                <span class="text-secondary">Live Chat <a href="https://wa.me/<?php echo $_ENV['APP_WHATSAPP'];?>" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" height="30" width="auto" alt="Chat on WhatsApp" style="width: 50px;">
+                 </a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+ </div>
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar p-3">
     <div class="container">
         <a class="navbar-brand" href="index.php"><img src="images/matlogomain.png" height="40" width="auto" alt=""><span></span></a>
 
@@ -54,39 +92,8 @@ $check_login = isset($_SESSION['user']) && !empty($_SESSION['user']);
                 <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="index.php">HOME</a>
                 </li>
-                <li class="nav-item dropdown <?php echo basename($_SERVER['PHP_SELF']) == 'shop.php' ? 'active' : ''; ?>">
-                    <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        SHOP BY BRAND
-                    </a>
-                    <ul class="dropdown-menu bg-white text-primary" aria-labelledby="shopDropdown">
-                        <div class="d-none d-md-flex flex-wrap">
-                            <?php
-                            // Assuming you have an array of brands
-                            $brands = [
-                                ['id' => 1, 'name' => 'Brand 1', 'image' => 'https://mattress.ng/image/cache/catalog/mouka%20logo%20x-100x100.png'],
-                                ['id' => 2, 'name' => 'Brand 2', 'image' => 'https://mattress.ng/image/cache/catalog/mouka%20logo%20x-100x100.png'],
-                                // Add more brands as needed
-                            ];
-
-                            foreach ($brands as $brand) {
-                                echo '<div class="p-2">';
-                                echo '<a class="dropdown-item" href="shop.php?brand_id=' . $brand['id'] . '">';
-                                echo '<img src="' . $brand['image'] . '" alt="' . $brand['name'] . '" height="50" width="auto"> ' . $brand['name'];
-                                echo '</a>';
-                                echo '</div>';
-                            }
-                            ?>
-                        </div>
-                        <div class="d-md-none">
-                            <?php
-                            foreach ($brands as $brand) {
-                                echo '<li><a class="dropdown-item" href="shop.php?brand_id=' . $brand['id'] . '">';
-                                echo '<img src="' . $brand['image'] . '" alt="' . $brand['name'] . '" height="20" width="auto"> ' . $brand['name'];
-                                echo '</a></li>';
-                            }
-                            ?>
-                        </div>
-                    </ul>
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'shop.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="shop.php">SHOP BY BRAND</a>
                 </li>
                 
                 <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'pillow.php' ? 'active' : ''; ?>">
@@ -110,20 +117,45 @@ $check_login = isset($_SESSION['user']) && !empty($_SESSION['user']);
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link position-relative" href="cart.php">
-                        <img src="images/cart.svg" alt="Cart">
-                        <?php
-                        // Assuming you have a function or variable that gives you the cart item count
-                        $cartItemCount = 3; // Replace this with your actual cart item count logic
-                        if ($cartItemCount > 0) {
-                            echo '<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">';
-                            echo $cartItemCount;
-                            echo '<span class="visually-hidden">unread messages</span>';
-                            echo '</span>';
-                        }
-                        ?>
-                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link position-relative dropdown-toggle" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/cart.svg" alt="Cart">
+                            <span id="cartItemCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu bg-white text-primary" aria-labelledby="cartDropdown">
+                            <li><a class="dropdown-item" href="cart.php">View Cart</a></li>
+                            <li><a class="dropdown-item" href="checkout.php">Checkout</a></li>
+                        </ul>
+                    </li>
                 </li>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        function updateCartCount() {
+                            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+                            var cartItemCount = cart.length;
+                            var cartItemCountElement = document.getElementById('cartItemCount');
+                            
+                            if (cartItemCount > 0) {
+                                cartItemCountElement.textContent = cartItemCount;
+                                cartItemCountElement.style.display = 'inline';
+                            } else {
+                                cartItemCountElement.style.display = 'none';
+                            }
+                        }
+
+                        // Initial update
+                        updateCartCount();
+
+                        // Update cart count when localStorage changes
+                        window.addEventListener('storage', function(event) {
+                            if (event.key === 'cart') {
+                                updateCartCount();
+                            }
+                        });
+                    });
+                </script>
             </ul>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -7,7 +7,6 @@ require __DIR__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-
 
 $shipping_fee = 5000;
 ?>
@@ -69,30 +68,7 @@ $shipping_fee = 5000;
                 </tr>
               </thead>
               <tbody id="cart-items">
-                <?php for ($i = 0; $i < 2; $i++): ?>
-                <tr data-id="<?php echo $i; ?>">
-                  <td class="product-thumbnail">
-                    <img src="https://mattress.ng/image/cache/catalog/cream1-300x300.jpg" alt="Product Image" class="img-fluid">
-                  </td>
-                  <td class="product-name">
-                    <h2 class="h5 text-black">Product <?php echo $i + 1; ?></h2>
-                  </td>
-                  <td class="product-price" data-price="512000">#512,000.00</td>
-                  <td>
-                    <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
-                      <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary decrease" type="button">&minus;</button>
-                      </div>
-                      <input type="text" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-secondary increase" type="button">&plus;</button>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="product-total">#512,000.00</td>
-                  <td><button type="button" class="btn btn-danger btn-sm remove-item">X</button></td>
-                </tr>
-                <?php endfor; ?>
+                <!-- Cart items will be dynamically generated here -->
               </tbody>
             </table>
           </div>
@@ -131,7 +107,7 @@ $shipping_fee = 5000;
                   <span class="text-black">Subtotal</span>
                 </div>
                 <div class="col-md-6 text-right">
-                  <strong class="text-black" id="cart-subtotal">$230.00</strong>
+                  <strong class="text-black" id="cart-subtotal">#0.00</strong>
                 </div>
               </div>
               <div class="row mb-5">
@@ -139,7 +115,7 @@ $shipping_fee = 5000;
                   <span class="text-black">Total</span>
                 </div>
                 <div class="col-md-6 text-right">
-                  <strong class="text-black" id="cart-total">$230.00</strong>
+                  <strong class="text-black" id="cart-total">#0.00</strong>
                 </div>
               </div>
               <div class="row">
@@ -162,6 +138,10 @@ $shipping_fee = 5000;
   <script src="js/tiny-slider.js"></script>
   <!-- <script src="js/custom.js"></script> -->
   <script>
+    function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
     document.addEventListener('DOMContentLoaded', function() {
       const cartItems = document.getElementById('cart-items');
       const cartSubtotal = document.getElementById('cart-subtotal');
@@ -182,9 +162,51 @@ $shipping_fee = 5000;
         cartTotal.textContent = `#${subtotal.toLocaleString()}.00`;
       }
 
+      
+      function loadCartItems() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.innerHTML = '';
+
+        cart.forEach((item, index) => {
+          const row = document.createElement('tr');
+          row.setAttribute('data-id', index);
+          row.innerHTML = `
+            <td class="product-thumbnail">
+              <img src="${item.productImage}" alt="Product Image" class="img-fluid">
+            </td>
+            <td class="product-name">
+              <h2 class="h5 text-primary text-start">${capitalizeFirstLetter(item.productName)}</h2>
+              <span class="text-start">${item.productSize}</span>
+            </td>
+            <td class="product-price" data-price="${item.sizePrice}">#${item.sizePrice.toLocaleString()}.00</td>
+            <td>
+              <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary decrease" type="button">&minus;</button>
+                </div>
+                <input type="text" class="form-control text-center quantity-amount" value="${item.quantity}" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary increase" type="button">&plus;</button>
+                </div>
+              </div>
+            </td>
+            <td class="product-total">#${(item.sizePrice * item.quantity).toLocaleString()}.00</td>
+            <td><button type="button" class="btn btn-danger btn-sm remove-item">X</button></td>
+          `;
+          cartItems.appendChild(row);
+        });
+
+        updateCartTotals();
+      }
+
       cartItems.addEventListener('click', function(event) {
         if (event.target.classList.contains('remove-item')) {
-          event.target.closest('tr').remove();
+          const row = event.target.closest('tr');
+          const index = row.getAttribute('data-id');
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cart.splice(index, 1);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          row.remove();
           updateCartTotals();
         } else if (event.target.classList.contains('increase')) {
           const quantityInput = event.target.closest('.quantity-container').querySelector('.quantity-amount');
@@ -207,7 +229,7 @@ $shipping_fee = 5000;
         }
       });
 
-      updateCartTotals();
+      loadCartItems();
     });
   </script>
 </body>

@@ -10,6 +10,9 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 
+$search = isset($_GET['search']) ? $_GET['search'] : null;
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,49 +37,71 @@ $dotenv->load();
 	<!-- Navbar section -->
 	<?php include 'components/navbar.php'; ?>
 	<!-- End Navbar section -->
-		
-		<!-- End Header/Navigation -->
-		<!-- Start Banner Carousel -->
-		<div class="container">
-		<div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="images/Banner.jpg" class="d-block mx-auto img-fluid" alt="Banner 1">
-					<div class="carousel-caption d-none d-md-block">
-						<!-- <h5>First Slide</h5>
-						<p>First slide description.</p> -->
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="images/sofa.png" class="d-block mx-auto img-fluid" alt="Banner 2">
-					<div class="carousel-caption d-none d-md-block">
-						<!-- <h5>Second Slide</h5>
-						<p>Second slide description.</p> -->
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="images/product-2.png" class="d-block mx-auto img-fluid" alt="Banner 3">
-					<div class="carousel-caption d-none d-md-block">
-						<!-- <h5>Third Slide</h5>
-						<p>Third slide description.</p> -->
-					</div>
+	 <div class="container <?php echo isset($_GET['search']) ? 'd-none' : ''; ?>">
+		 <div class="row mt-5">
+			 <div class="col-md-6 col-lg-12 mt-3 mb-3 text-center ">
+				 <h1 style="text-transform:uppercase; line-height:1.5;" class="text-black">Welcome to <span class="text-primary"><?php echo $_ENV['APP_NAME'];?></span></h1>
+				 <p class="text-black fs-6">We offer a wide range of high-quality mattresses that combine comfort and affordability. Our products are designed to provide you with the best sleep experience, ensuring you wake up refreshed and ready to take on the day.</p>
+				 <!-- <a href="shop.php" class="btn mt-3 mb-3 btn-secondary">Shop Now</a> -->
+			 </div>
+		 </div>
+	 </div>
+	 <div class="container  <?php echo isset($_GET['search']) ? 'd-none' : ''; ?> ">
+		 <div class="row">
+			 <div class="col-md-6 mt-5 text-center">
+				<p style="text-transform:uppercase; line-height:1.5;" class="text-black fs-1 mt-3">Discover the <span class="text-danger">5 Mistakes to Avoid when buying a mattress</span> for better sleep, health and all - day productivity</p>
+				<p class="fs-6">Research Reveals That Low-Quality Mattress Can Increase Your Stress Levels and Affect Productivity in Life… But This Mattress Buying Guide Will Ensure You Buy the Right Mattress Without Any Hassle!</p>
+ 
+			 </div>
+			 <div class="col-md-6 mb-5 text-center">
+				<img src="images/5-MATTRESS-GUIDE-.png" class="img-fluid" alt="mattress">
+				<div class="mt-3">
+					<a href="guide.php"  class="btn btn-primary">Download Guide <span class="me-3"><i class="fa-solid fa-download"></i></span></a>
 				</div>
 			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
+		 </div>
+	 </div>
+		<!-- Start Banner Carousel -->
+		<div class="container  <?php echo isset($_GET['search']) ? 'd-none' : ''; ?>">
+			<div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="images/Banner.jpg" class="d-block mx-auto img-fluid" alt="Banner 1">
+						<div class="carousel-caption d-none d-md-block">
+							<!-- <h5>First Slide</h5>
+							<p>First slide description.</p> -->
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="images/sofa.png" class="d-block mx-auto img-fluid" alt="Banner 2">
+						<div class="carousel-caption d-none d-md-block">
+							<!-- <h5>Second Slide</h5>
+							<p>Second slide description.</p> -->
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="images/product-2.png" class="d-block mx-auto img-fluid" alt="Banner 3">
+						<div class="carousel-caption d-none d-md-block">
+							<!-- <h5>Third Slide</h5>
+							<p>Third slide description.</p> -->
+						</div>
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
 		</div>
 		<!-- End Banner Carousel -->
 		<!-- Start Best Selling Section -->
 		<div class="container my-2">
 			<div class="p-3">
-				<h2 class="text-left mb-4 text-primary">Best Selling Big Brand Mattresses</h2>
+				<h2 class="text-left mb-4 text-primary">Latest Products</h2>
 			</div>
 			<hr>
 		</div>
@@ -91,7 +116,7 @@ $dotenv->load();
 		<!-- End Product Cards Section -->
 
 		<!-- Start Hero Section -->
-			<div class="hero ">
+			<!-- <div class="hero " >
 				<div class="container">
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
@@ -103,13 +128,13 @@ $dotenv->load();
 						</div>
 						<div class="col-lg-7">
 							<div class="hero-img-wrap">
-								<img src="images/Pillow.png" class="img-fluid w-100">
+								<img src="images/Pillow.png" height="70" width="auto" class="img-fluid">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		<!-- End Hero Section -->
+		End Hero Section -->
 
 		<!-- Start Product Section -->
 	
@@ -175,34 +200,6 @@ $dotenv->load();
 			</div>
 		</div>
 		<!-- End Why Choose Us Section -->
-
-		<!-- Start We Help Section -->
-		<!-- <div class="we-help-section">
-			<div class="container">
-				<div class="row justify-content-between">
-					<div class="col-lg-7 mb-5 mb-lg-0">
-						<div class="imgs-grid">
-							<div class="grid grid-1"><img src="images/img-grid-1.jpg" alt="Untree.co"></div>
-							<div class="grid grid-2"><img src="images/img-grid-2.jpg" alt="Untree.co"></div>
-							<div class="grid grid-3"><img src="images/img-grid-3.jpg" alt="Untree.co"></div>
-						</div>
-					</div>
-					<div class="col-lg-5 ps-lg-5">
-						<h2 class="section-title mb-4">We Help You Make Modern Interior Design</h2>
-						<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-
-						<ul class="list-unstyled custom-list my-4">
-							<li>Donec vitae odio quis nisl dapibus malesuada</li>
-							<li>Donec vitae odio quis nisl dapibus malesuada</li>
-							<li>Donec vitae odio quis nisl dapibus malesuada</li>
-							<li>Donec vitae odio quis nisl dapibus malesuada</li>
-						</ul>
-						<p><a herf="#" class="btn">Explore</a></p>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!-- End We Help Section -->
 
 		<?php include 'components/testimonial.php'; ?>
 
