@@ -6,18 +6,12 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-
 // redirect if check_login is true
-
 $check_login = isset($_SESSION['user']) && !empty($_SESSION['user']);
 if ($check_login) {
     header('Location: index.php');
     exit();
 }
-
-
-
-
 
 $url = $_ENV['API_ROOT_DIR'] . 'user/login.php';
 
@@ -51,7 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email']) && isset($_PO
     if ($response->status == true) {
         $_SESSION['user'] = $response->data;
         $_SESSION['last_activity'] = time();
-        echo json_encode(['status' => true, 'message' => 'Login successful']);
+        $_SESSION['permission'] = $response->data->permission; // Store permission in session
+        echo json_encode(['status' => true, 'message' => 'Login successful', 'permission' => $response->data->permission]);
         exit();
     } else {
         echo json_encode(['status' => false, 'message' => $response->message]);
@@ -121,55 +116,60 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email']) && isset($_PO
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var form = this;
-            var formData = new FormData(form);
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', form.action, true);
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    if (response.status === true) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Success',
-                            text: 'Login successful',
-                            confirmButtonColor: '#ffffff',
-                            confirmButtonText: '<span style="color: #04048C;">OK</span>',
-                            cancelButtonColor: '#d33',
-                            background: '#04048C',
-                            color: '#DCDC00'
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                window.location = 'index.php';
-                            }
-                        });
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var form = this;
+                var formData = new FormData(form);
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', form.action, true);
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+
+                        if (response.status === true) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: 'Login successful',
+                                confirmButtonColor: '#ffffff',
+                                confirmButtonText: '<span style="color: #04048C;">OK</span>',
+                                cancelButtonColor: '#d33',
+                                background: '#04048C',
+                                color: '#DCDC00'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    if (response.permission && response.permission === 1) {
+                                        window.location = './admin/index.php';
+                                    } else {
+                                        window.location = 'index.php';
+                                    }
+                                }
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: response.message,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                background: '#f8d7da',
+                                color: '#721c24'
+                            });
+                        }
                     } else {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: response.message,
+                            text: 'An error occurred',
                             confirmButtonColor: '#3085d6',
                             cancelButtonColor: '#d33',
                             background: '#f8d7da',
                             color: '#721c24'
                         });
                     }
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'An error occurred',
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        background: '#f8d7da',
-                        color: '#721c24'
-                    });
-                }
-            };
-            xhr.send(formData);
-        });
+                };
+                xhr.send(formData);
+            });
         </script>
 
         <!-- Start Footer Section -->

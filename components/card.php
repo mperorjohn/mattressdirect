@@ -56,7 +56,9 @@ curl_close($ch);
                     </p>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="card-text fw-bold mb-0" style="color:#04048C;">#<?php echo number_format($product->product_price, 2); ?></h5>
+                    <h5 class="card-text fw-bold mb-0" style="color:#04048C;">
+                        #<?php echo number_format(isset($product->product_price) && is_numeric($product->product_price) ? $product->product_price : 0, 2); ?>
+                    </h5>
                     <a href="product-details.php?id=<?php echo $product->id ;?>" class="btn btn-sm btn-primary"><i class="fas fa-cart-plus"></i></a>
                 </div>
             </div>

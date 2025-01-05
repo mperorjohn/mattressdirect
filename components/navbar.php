@@ -36,6 +36,13 @@ $_SESSION['last_activity'] = time();
 
 $check_login = isset($_SESSION['user']) && !empty($_SESSION['user']);
 
+
+// check permission redirect back to /admin/index.php
+if(isset($_SESSION['permission']) && $_SESSION['permission'] === 1){
+    header('Location: ./admin/index.php');
+    exit();
+}
+
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: End Session Timeout ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

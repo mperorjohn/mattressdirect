@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="255" height="217" viewBox="0 0 255 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <rect width="255" height="217" />
+    <g id="Group">
+      <rect id="Rectangle" width="255" height="217" />
+      <path id="Circle" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" />
+      <path id="Circle#1" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(31 0)" />
+      <path id="Circle#2" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(62 0)" />
+      <path id="Circle#3" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(93 0)" />
+      <path id="Circle#4" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(124 0)" />
+      <path id="Circle#5" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(155 0)" />
+      <path id="Circle#6" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(186 0)" />
+      <path id="Circle#7" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(217 0)" />
+      <path id="Circle#8" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(248 0)" />
+      <path id="Circle#9" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(0 30)" />
+      <path id="Circle#10" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(31 30)" />
+      <path id="Circle#11" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(62 30)" />
+      <path id="Circle#12" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(93 30)" />
+      <path id="Circle#13" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(124 30)" />
+      <path id="Circle#14" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(155 30)" />
+      <path id="Circle#15" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(186 30)" />
+      <path id="Circle#16" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(217 30)" />
+      <path id="Circle#17" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(248 30)" />
+      <path id="Circle#18" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(0 60)" />
+      <path id="Circle#19" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(31 60)" />
+      <path id="Circle#20" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(62 60)" />
+      <path id="Circle#21" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(93 60)" />
+      <path id="Circle#22" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(124 60)" />
+      <path id="Circle#23" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(155 60)" />
+      <path id="Circle#24" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(186 60)" />
+      <path id="Circle#25" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(217 60)" />
+      <path id="Circle#26" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(248 60)" />
+      <path id="Circle#27" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(0 90)" />
+      <path id="Circle#28" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(31 90)" />
+      <path id="Circle#29" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(62 90)" />
+      <path id="Circle#30" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(93 90)" />
+      <path id="Circle#31" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(124 90)" />
+      <path id="Circle#32" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(155 90)" />
+      <path id="Circle#33" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(186 90)" />
+      <path id="Circle#34" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(217 90)" />
+      <path id="Circle#35" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(248 90)" />
+      <path id="Circle#36" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(0 120)" />
+      <path id="Circle#37" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(31 120)" />
+      <path id="Circle#38" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(62 120)" />
+      <path id="Circle#39" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(93 120)" />
+      <path id="Circle#40" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(124 120)" />
+      <path id="Circle#41" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(155 120)" />
+      <path id="Circle#42" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(186 120)" />
+      <path id="Circle#43" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(217 120)" />
+      <path id="Circle#44" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(248 120)" />
+      <path id="Circle#45" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(0 150)" />
+      <path id="Circle#46" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(31 150)" />
+      <path id="Circle#47" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(62 150)" />
+      <path id="Circle#48" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(93 150)" />
+      <path id="Circle#49" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(124 150)" />
+      <path id="Circle#50" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(155 150)" />
+      <path id="Circle#51" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(186 150)" />
+      <path id="Circle#52" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(217 150)" />
+      <path id="Circle#53" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(248 150)" />
+      <path id="Circle#54" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(0 180)" />
+      <path id="Circle#55" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(31 180)" />
+      <path id="Circle#56" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(62 180)" />
+      <path id="Circle#57" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(93 180)" />
+      <path id="Circle#58" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(124 180)" />
+      <path id="Circle#59" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(155 180)" />
+      <path id="Circle#60" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(186 180)" />
+      <path id="Circle#61" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(217 180)" />
+      <path id="Circle#62" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(248 180)" />
+      <path id="Circle#63" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(0 210)" />
+      <path id="Circle#64" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(31 210)" />
+      <path id="Circle#65" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(62 210)" />
+      <path id="Circle#66" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(93 210)" />
+      <path id="Circle#67" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(124 210)" />
+      <path id="Circle#68" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(155 210)" />
+      <path id="Circle#69" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(186 210)" />
+      <path id="Circle#70" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(217 210)" />
+      <path id="Circle#71" d="M0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 3.5 0 3.5 0 3.5Z" fill="#04048C" fill-rule="evenodd" transform="translate(248 210)" />
+    </g>
+  </g>
+</svg>

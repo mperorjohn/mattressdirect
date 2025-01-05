@@ -218,14 +218,18 @@ $size = $response->data;
                         <form id="add-to-cart-form" action="" method="post">
                             <div class="form-group">
                                 <label for="size">Mattress Sizes <span class="text-danger fw-bold">*</span></label>
-                                <select class="form-select" id="size">
-                                    <option class="form-control" disabled>Select Size</option>
-                                    <?php foreach ($size as $s): ?>
-                                        <option class="form-control" value="<?php echo $s->id; ?>" data-price="<?php echo $s->price; ?>">
-                                            <?php echo $s->size . ' (' . number_format($s->price, 2) . ')'; ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
+								<?php if (!empty($size)): ?>
+									<select class="form-select" id="size">
+										<option class="form-control" disabled>Select Size</option>
+										<?php foreach ($size as $s): ?>
+											<option class="form-control" value="<?php echo $s->id; ?>" data-price="<?php echo $s->price; ?>">
+												<?php echo $s->size . ' (' . number_format($s->price, 2) . ')'; ?>
+											</option>
+										<?php endforeach; ?>
+									</select>
+								<?php else: ?>
+									<p>No size available</p>
+								<?php endif; ?>
                             </div>
                             
                             <div class="form-group d-flex align-items-center mt-3 flex-wrap">
