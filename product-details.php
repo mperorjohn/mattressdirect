@@ -15,15 +15,17 @@ $id = $_GET['id'];
 // API integration
 $url = $_ENV['API_ROOT_DIR'] . 'product/getProductById.php?id=';
 $size_url = $_ENV['API_ROOT_DIR'] . 'size/getSizebyProduct.php?product_id=';
+$additional_images_url = $_ENV['API_ROOT_DIR'] . 'product/getProductImages.php?id=';
 
 
 
 if (isset($_GET['id'])) {
-	$url .= $_GET['id'];
-	$size_url .= $_GET['id'];
+    $url .= $_GET['id'];
+    $size_url .= $_GET['id'];
+    $additional_images_url .= $_GET['id'];
 } else {
-	header('Location: index.php');
-	exit();
+    header('Location: index.php');
+    exit();
 }
 // die($url);
 
@@ -34,23 +36,23 @@ curl_close($ch);
 
 
 if ($result === false) {
-	echo json_encode(['status' => false, 'message' => 'Failed to connect to API']);
-	exit();
+    echo json_encode(['status' => false, 'message' => 'Failed to connect to API']);
+    exit();
 }
 
 $response = json_decode($result);
 
 if ($response === null || !isset($response->status)) {
-	echo json_encode(['status' => false, 'message' => 'Invalid API response']);
-	exit();
+    echo json_encode(['status' => false, 'message' => 'Invalid API response']);
+    exit();
 }
 
 if ($response->status == false) {
-	echo json_encode(['status' => false, 'message' => $response->message]);
+    echo json_encode(['status' => false, 'message' => $response->message]);
 
-	// then redirect to the home page
-	header('Location: index.php');
-	exit();
+    // then redirect to the home page
+    header('Location: index.php');
+    exit();
 }
 
 $product = $response->data;
@@ -61,14 +63,14 @@ $product = $response->data;
 
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: generate code ::
 function generateCode(){
-	$length = 6;
-	$characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	$charactersLength = strlen($characters);
-	$randomString = '';
-	for ($i = 0; $i < $length; $i++) {
-		$randomString .= $characters[rand(0, $charactersLength - 1)];
-	}
-	return $randomString;
+    $length = 6;
+    $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
 }
 
  $new_code = generateCode();
@@ -91,27 +93,61 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 if ($result === false) {
-	echo json_encode(['status' => false, 'message' => 'Failed to connect to API']);
-	exit();
+    echo json_encode(['status' => false, 'message' => 'Failed to connect to API']);
+    exit();
 }
 
 $response = json_decode($result);
 
 if ($response === null || !isset($response->status)) {
-	echo json_encode(['status' => false, 'message' => 'Invalid API response']);
-	exit();
+    echo json_encode(['status' => false, 'message' => 'Invalid API response']);
+    exit();
 }
 
 if ($response->status == false) {
-	echo json_encode(['status' => false, 'message' => $response->message]);
-	exit();
+    echo json_encode(['status' => false, 'message' => $response->message]);
+    exit();
 }
 
 $size = $response->data;
 
 // var_dump($size);
 
+
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: end Size Integration ::
+
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: additional images Integration ::
+// additional images API integration
+
+$ch = curl_init($additional_images_url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$result = curl_exec($ch);
+curl_close($ch);
+
+if ($result === false) {
+    echo json_encode(['status' => false, 'message' => 'Failed to connect to API']);
+    exit();
+}
+
+$response = json_decode($result);
+
+if ($response === null || !isset($response->status)) {
+    echo json_encode(['status' => false, 'message' => 'Invalid API response']);
+    exit();
+}
+
+if ($response->status == false) {
+    echo json_encode(['status' => false, 'message' => $response->message]);
+    exit();
+}
+
+$additional_images = isset($response->data) ? $response->data : [];
+
+// var_dump($additional_images);
+
+
+// image_path
 
 
 ?>
@@ -139,15 +175,26 @@ $size = $response->data;
                     .zoom-container {
                         overflow: hidden;
                         position: relative;
+                        height: 610px; /* Set a fixed height for the image container */
                     }
 
                     .zoom {
                         transition: transform .2s; /* Animation */
                         transform-origin: center center;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover; /* Ensure the image covers the container without shifting */
                     }
 
                     .zoom-container:hover .zoom {
                         transform: scale(1.5); /* (150% zoom) */
+                    }
+
+                    .related-images img {
+                        height: 200px; /* Set a fixed height for related images */
+                        width: 100%;
+                        object-fit: cover; /* Ensure the image covers the container without shifting */
+                        cursor: pointer;
                     }
                 </style>
     </head>
@@ -173,29 +220,29 @@ $size = $response->data;
                 <div class="product-image">
                     <div class="card">
                         <div class="zoom-container">
-                            <img src="<?php echo is_array($product->product_image) ? $product->product_image[0] : $product->product_image; ?>" class="card-img-top hover-effect zoom" alt="Product Image" style="height: 100%; width: 100%; margin-top: 5px; object-fit: cover;">
+                            <img src="<?php echo is_array($product->product_image) ? $product->product_image[0] : $product->product_image; ?>" class="card-img-top hover-effect zoom" alt="Product Image">
                         </div>
                     </div>
                     
                     <div class="related-images mt-3">
                         <div class="row justify-content-center">
                             <?php 
-                            if (is_array($product->product_image)) {
-                                $related_images = array_slice($product->product_image, 1, 4);
-                                foreach ($related_images as $image) {
+                            if (!empty($additional_images)) {
+                                foreach ($additional_images as $image) {
                                     echo '<div class="col-6 col-md-3 mb-3">
-                                            <img src="' . $image . '" class="img-fluid" alt="Related Image" style="height: 200px; width: 100%; object-fit: cover;">
+                                            <img src="' . $image->image_path . '" class="img-fluid" alt="Related Image">
                                           </div>';
                                 }
                             } else {
                                 echo '<div class="col-6 col-md-3 mb-3">
-                                        <img src="' . $product->product_image . '" class="img-fluid" alt="Related Image" style="height: 200px; width: 100%; object-fit: cover;">
+                                        <img src="' . (is_array($product->product_image) ? $product->product_image[0] : $product->product_image) . '" class="img-fluid" alt="Related Image">
                                       </div>';
                             }
                             ?>
                         </div>
                     </div>
                 </div>
+                
             </div>
             <div class="col-md-6">
                 <div class="product-details card p-5">
@@ -212,26 +259,37 @@ $size = $response->data;
                         <p><?php echo $product->product_description; ?></p>
                         <hr class="mt-5">
                     </div>
+                            <div class="toast-container position-absolute bottom-0 start-50 translate-middle-x p-3">
+                                <div id="cart-toast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="d-flex">
+                                        <div class="toast-body bg-success text-white">
+                                            You have successfully added the product to your cart.
+                                        </div>
+                                        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
 
                     <div>
                         <p class="fs-3">Available Options</p>
                         <form id="add-to-cart-form" action="" method="post">
                             <div class="form-group">
                                 <label for="size">Mattress Sizes <span class="text-danger fw-bold">*</span></label>
-								<?php if (!empty($size)): ?>
-									<select class="form-select" id="size">
-										<option class="form-control" disabled>Select Size</option>
-										<?php foreach ($size as $s): ?>
-											<option class="form-control" value="<?php echo $s->id; ?>" data-price="<?php echo $s->price; ?>">
-												<?php echo $s->size . ' (' . number_format($s->price, 2) . ')'; ?>
-											</option>
-										<?php endforeach; ?>
-									</select>
-								<?php else: ?>
-									<p>No size available</p>
-								<?php endif; ?>
+                                <?php if (!empty($size)): ?>
+                                    <select class="form-select" id="size">
+                                        <option class="form-control" disabled>Select Size</option>
+                                        <?php foreach ($size as $s): ?>
+                                            <option class="form-control" value="<?php echo $s->id; ?>" data-price="<?php echo $s->price; ?>">
+                                                <?php echo $s->size . ' (' . number_format($s->price, 2) . ')'; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                <?php else: ?>
+                                    <p>No size available</p>
+                                <?php endif; ?>
                             </div>
                             
+                            <?php if (!empty($size)): ?>
                             <div class="form-group d-flex align-items-center mt-3 flex-wrap">
                                 <label for="quantity" class="me-2">Qty</label>
                                 <div class="input-group" style="width: 120px;">
@@ -243,6 +301,7 @@ $size = $response->data;
                                 <input type="hidden" name="product_code" value="<?php echo $product->id . $new_code; ?>">
                                 <button type="button" id="add-to-cart-btn" class="fw-bold btn btn-primary ms-3 mt-2 mt-md-0" style="border-radius:5px !important;">+ Cart</button>
                             </div>
+                            <?php endif; ?>
                             <hr >
                             <p class="text-center fs-5">Checkout</p>
                             <div class="form-group d-flex align-items-center justify-content-center ">
@@ -268,22 +327,13 @@ $size = $response->data;
                                 </div>
                             </div>
                             <!-- Toast Container -->
-                            <div class="toast-container position-absolute bottom-0 start-50 translate-middle-x p-3">
-                                <div id="cart-toast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="d-flex">
-                                        <div class="toast-body bg-success text-white">
-                                            You have successfully added the product to your cart.
-                                        </div>
-                                        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                                    </div>
-                                </div>
-                            </div>
                         </form>
                     </div>
                 </div>
             </div>
+            <?php include 'components/payment-channel.php'; ?>
     </div>
-<script>
+    <script>
 document.addEventListener('DOMContentLoaded', function() {
     const quantityInput = document.getElementById('quantity');
     const priceElement = document.querySelector('.price');
@@ -294,6 +344,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const basePrice = <?php echo $product->product_price; ?>;
     const incrementBtn = document.getElementById('increment-btn');
     const decrementBtn = document.getElementById('decrement-btn');
+    const mainImage = document.querySelector('.product-image .card-img-top');
+    const additionalImages = document.querySelectorAll('.related-images img');
 
     // Reset quantity to 1 on page reload
     quantityInput.value = 1;
@@ -364,7 +416,26 @@ document.addEventListener('DOMContentLoaded', function() {
             totalPriceInput.value = basePrice;
         }
     }
+
+    // Add event listeners to additional images
+    additionalImages.forEach(image => {
+        image.addEventListener('click', function() {
+            mainImage.src = this.src;
+        });
+    });
 });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainImage = document.querySelector('.product-image .card-img-top');
+        const additionalImages = document.querySelectorAll('.related-images img');
+
+        additionalImages.forEach(image => {
+            image.addEventListener('click', function() {
+                mainImage.src = this.src;
+            });
+        });
+    });
 </script>
 </div>
         

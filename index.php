@@ -37,30 +37,6 @@ $search = isset($_GET['search']) ? $_GET['search'] : null;
 	<!-- Navbar section -->
 	<?php include 'components/navbar.php'; ?>
 	<!-- End Navbar section -->
-	 <div class="container <?php echo isset($_GET['search']) ? 'd-none' : ''; ?>">
-		 <div class="row mt-5">
-			 <div class="col-md-6 col-lg-12 mt-3 mb-3 text-center ">
-				 <h1 style="text-transform:uppercase; line-height:1.5;" class="text-black">Welcome to <span class="text-primary"><?php echo $_ENV['APP_NAME'];?></span></h1>
-				 <p class="text-black fs-6">We offer a wide range of high-quality mattresses that combine comfort and affordability. Our products are designed to provide you with the best sleep experience, ensuring you wake up refreshed and ready to take on the day.</p>
-				 <!-- <a href="shop.php" class="btn mt-3 mb-3 btn-secondary">Shop Now</a> -->
-			 </div>
-		 </div>
-	 </div>
-	 <div class="container  <?php echo isset($_GET['search']) ? 'd-none' : ''; ?> ">
-		 <div class="row">
-			 <div class="col-md-6 mt-5 text-center">
-				<p style="text-transform:uppercase; line-height:1.5;" class="text-black fs-1 mt-3">Discover the <span class="text-danger">5 Mistakes to Avoid when buying a mattress</span> for better sleep, health and all - day productivity</p>
-				<p class="fs-6">Research Reveals That Low-Quality Mattress Can Increase Your Stress Levels and Affect Productivity in Life… But This Mattress Buying Guide Will Ensure You Buy the Right Mattress Without Any Hassle!</p>
- 
-			 </div>
-			 <div class="col-md-6 mb-5 text-center">
-				<img src="images/5-MATTRESS-GUIDE-.png" class="img-fluid" alt="mattress">
-				<div class="mt-3">
-					<a href="guide.php"  class="btn btn-primary">Download Guide <span class="me-3"><i class="fa-solid fa-download"></i></span></a>
-				</div>
-			</div>
-		 </div>
-	 </div>
 		<!-- Start Banner Carousel -->
 		<div class="container  <?php echo isset($_GET['search']) ? 'd-none' : ''; ?>">
 			<div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -97,7 +73,70 @@ $search = isset($_GET['search']) ? $_GET['search'] : null;
 				</button>
 			</div>
 		</div>
+		<div class="container  <?php echo isset($_GET['search']) ? 'd-none' : ''; ?> ">
+		 <div class="row">
+			 <div class="col-md-12 mt-5 text-center">
+				<p style="text-transform:uppercase; line-height:1.5;" class="text-black fs-1 mt-3">Discover the <span class="text-danger">5 Mistakes to Avoid when buying a mattress</span> for better sleep, health and all - day productivity</p>
+				<p class="fs-6">Research Reveals That Low-Quality Mattress Can Increase Your Stress Levels and Affect Productivity in Life… But This Mattress Buying Guide Will Ensure You Buy the Right Mattress Without Any Hassle!</p>
+				
+				<a href="guide.php"  class="btn btn-primary">Download Guide <span class="me-3"><i class="fa-solid fa-download"></i></span></a>
+			 </div>
+		 </div>
+	 </div>
 		<!-- End Banner Carousel -->
+		<!-- Start Foam Brands Section -->
+		<div class="container my-5">
+			<!-- <h2 class="text-left mb-4 text-primary">Our Foam Brands</h2> -->
+			<div class="row">
+				<div class="col-12">
+					<div id="brandCarousel" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<div class="row">
+									<div class="col-3">
+										<img src="images/mouka.png" class="img-fluid" style="width: 100px; height: auto;" alt="Brand 1">
+									</div>
+									<div class="col-3">
+										<img src="images/vitafoam-plc-nigeria--600.png" class="img-fluid" style="width: 100px; height: auto;" alt="Brand 2">
+									</div>
+									<div class="col-3">
+										<img src="images/sarafoam.png" class="img-fluid" style="width: 100px; height: auto;" alt="Brand 3">
+									</div>
+									<div class="col-3">
+										<img src="images/unifoam.jpg" class="img-fluid" style="width: 100px; height: auto;" alt="Brand 4">
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="row">
+									<div class="col-3">
+										<img src="images/wincodownload.jpeg" class="img-fluid" style="width: 100px; height: auto;" alt="Brand 1">
+									</div>
+									<div class="col-3">
+										<img src="images/royalfoam.png" class="img-fluid" style="width: 100px; height: auto;" alt="Brand 2">
+									</div>
+									<div class="col-3">
+										<img src="https://olivefoam.ng/wp-content/uploads/2024/08/olive_foam_logo2-removebg-preview.png" class="img-fluid" style="width: 100px; height: auto;" alt="Brand 3">
+									</div>
+									<div class="col-3">
+										<img src="https://mattress.ng/image/cache/catalog/1111/WhatsApp%20Image%202024-11-05%20at%2012.09.19_373a23a1-825x220.png" class="img-fluid" style="width: 100px; height: auto;" alt="Brand 4">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Foam Brands Section  -->
 		<!-- Start Best Selling Section -->
 		<div class="container my-2">
 			<div class="p-3">
@@ -113,6 +152,35 @@ $search = isset($_GET['search']) ? $_GET['search'] : null;
 					<?php include 'components/card.php' ?>
 			</div>
 		</div>
+		<div class="d-flex bg-primary align-items-center justify-content-center container text-white">
+			<div class="d-flex justify-content-center mt-5">
+				<div class=" text-center me-5">
+					<div class="icon">
+						<i class="fas fa-truck fa-2x text-secondary"></i>
+					</div>
+					<p class="text-secondary">Fast &amp; Free Shipping</p>
+				</div>
+				<div class=" text-center me-5">
+					<div class="icon">
+						<i class="fas fa-shopping-bag fa-2x text-secondary"></i>
+					</div>
+					<p class="text-secondary">Easy to Shop</p>
+				</div>
+				<div class=" text-center me-5">
+					<div class="icon">
+						<i class="fas fa-headset fa-2x text-secondary"></i>
+					</div>
+					<p class="text-secondary">24/7 Support</p>
+				</div>
+			</div>
+		</div>
+
+		<?php include 'components/payment-channel.php'; ?>
+
+		
+
+
+
 		<!-- End Product Cards Section -->
 
 		<!-- Start Hero Section -->
@@ -139,7 +207,7 @@ $search = isset($_GET['search']) ? $_GET['search'] : null;
 		<!-- Start Product Section -->
 	
 		<!-- Start Why Choose Us Section -->
-		<div class="why-choose-section">
+		<!-- <div class="why-choose-section">
 			<div class="container">
 				<div class="row justify-content-between">
 					<div class="col-lg-6">
@@ -198,7 +266,7 @@ $search = isset($_GET['search']) ? $_GET['search'] : null;
 
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- End Why Choose Us Section -->
 
 		<?php include 'components/testimonial.php'; ?>

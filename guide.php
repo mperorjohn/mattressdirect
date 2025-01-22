@@ -54,7 +54,7 @@ $url = $_ENV['API_ROOT_DIR'] . 'contact/contactUs.php';
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <img src="images/5-MATTRESS-GUIDE-.png" class="img-fluid" height="50%" widith="auto" alt="mattress">
+            <img src="https://images.squarespace-cdn.com/content/v1/5beb00a47e3c3abd688e43b4/1584077530459-ZBIUGNWZM9TTBEEI0BU2/sleep+disorder" class="img-fluid" height="50%" widith="auto" alt="mattress">
         </div>
         <div class="col-md-6 " id="guideForm">
             <p  style="text-transform:uppercase; line-height:1.5;" class="text-primary text-center fs-1">YES! I WANT TO SLEEP BETTER. GIVE ME MY FREE GUIDE</p>
@@ -86,7 +86,7 @@ $url = $_ENV['API_ROOT_DIR'] . 'contact/contactUs.php';
     </div>
     <div class="row">
         <div class="col-md-4">
-            <img src="images/5-MATTRESS-GUIDE-.png" class="img-fluid" height="50%" widith="auto" alt="mattress">
+            <img src="https://media.istockphoto.com/id/1146406764/photo/woman-is-choosing-new-mattress-for-good-sleeping.jpg?s=612x612&w=0&k=20&c=8AtNhMbezszhLlxLK8w2bxjVq90FVXZ5qb6-W5vDV2c=" class="img-fluid" height="100%" widith="auto" alt="mattress">
 
         </div>
         <div class="col-md-8 mt-5 mb-5">
@@ -175,6 +175,8 @@ $url = $_ENV['API_ROOT_DIR'] . 'contact/contactUs.php';
     </div>
 
 </div>
+
+<?php include 'components/payment-channel.php'; ?>
 
 <!-- Start Footer Section -->
 <?php include 'components/footer.php'; ?>

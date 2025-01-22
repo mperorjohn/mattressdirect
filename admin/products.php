@@ -115,7 +115,7 @@ curl_close($ch);
 
       <div class="row">
             <div class="d-flex">
-                <button class="text-secondary btn btn-primary">Add Product</button>
+                <button class="text-secondary btn btn-primary" onclick="window.location='create-product.php'">Add Product</button>
 
             </div>
       </div>
@@ -164,7 +164,7 @@ curl_close($ch);
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item small" href="product-update.php?id=<?php echo $product->id; ?>">
+                      <a class="dropdown-item small" href="create-product.php?rw=true&id=<?php echo $product->id; ?>">
                         <i class="fas fa-edit"></i> Update
                       </a>
                     </li>
@@ -256,7 +256,7 @@ curl_close($ch);
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item small" href="product-update.php?id=${product.id}">
+                    <a class="dropdown-item small" href="create-product.php?rw=true&id=${product.id}">
                       <i class="fas fa-edit"></i> Update
                     </a>
                   </li>

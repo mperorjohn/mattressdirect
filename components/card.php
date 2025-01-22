@@ -41,6 +41,21 @@ curl_close($ch);
 
 ?>
 
+<!-- Include ScrollReveal.js -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.card', {
+            duration: 1000,
+            origin: 'bottom',
+            distance: '50px',
+            easing: 'ease-in-out',
+            reset: true
+        });
+    });
+</script>
+
 <?php if ($response->status && !empty($products)): ?>
     <?php foreach($products as $product): ?>
     <div class="col-md-6 col-lg-3 mb-4">
@@ -59,7 +74,7 @@ curl_close($ch);
                     <h5 class="card-text fw-bold mb-0" style="color:#04048C;">
                         #<?php echo number_format(isset($product->product_price) && is_numeric($product->product_price) ? $product->product_price : 0, 2); ?>
                     </h5>
-                    <a href="product-details.php?id=<?php echo $product->id ;?>" class="btn btn-sm btn-primary"><i class="fas fa-cart-plus"></i></a>
+                    <a href="product-details.php?id=<?php echo $product->id ;?>" class="btn btn-sm rounded btn-primary"><i class="fas fa-cart-plus"></i></a>
                 </div>
             </div>
         </div>

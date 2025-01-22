@@ -43,7 +43,7 @@ $dotenv->load();
 					<div class="col-lg-4">
 						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo"><img src="images/matlogo2.png" height="50" width="auto" alt=""></a></div>
 						<p class="mb-4 fs-6 text-primary"> <span class="fw-bold">Address:</span><?php echo "  " . " " . $_ENV['APP_ADDRESS'];?></p>
-						<p class="mb-4 fs-6 text-primary"> <span class="fw-bold">Contact:</span><?php echo "  " . " " . $_ENV['APP_CONTACT'];?></p>
+						<p class="mb-4 fs-6 text-primary"> <span class="fw-bold">Contact:</span><?php echo "  " . " " . $_ENV['APP_CONTACT_MAIN'];?></p>
 
 						<ul class="list-unstyled custom-social">
 							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>

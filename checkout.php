@@ -50,22 +50,7 @@ $orderId = generateOrderId();
     <?php include 'components/navbar.php'; ?>
     <!-- End Navbar section -->
 
-        <!-- Start Hero Section -->
-            <div class="hero">
-                <div class="container">
-                    <div class="row justify-content-between">
-                        <div class="col-lg-5">
-                            <div class="intro-excerpt">
-                                <h1>Checkout</h1>
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <!-- End Hero Section -->
+       
 
         <div class="untree_co-section">
             <div class="container">
@@ -79,7 +64,7 @@ $orderId = generateOrderId();
                 <?php endif; ?>
               </div>
               <div class="row">
-                <div class="col-md-6 mb-5 mb-md-0">
+                <div class="col-md-6 mb-3 mb-md-0">
                   <h2 class="h3 mb-3 text-primary">Shipping Address</h2>
                   <div class="p-3 p-lg-5 border bg-white">
                     <div class="form-group">
@@ -294,6 +279,7 @@ $orderId = generateOrderId();
               <!-- </form> -->
             </div>
           </div>
+          <?php include 'components/payment-channel.php'; ?>
 
         <!-- Start Footer Section -->
          <?php include 'components/footer.php'; ?>

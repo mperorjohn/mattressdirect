@@ -130,6 +130,8 @@ $shipping_fee = 5000;
     </div>
   </div>
 
+  <?php include 'components/payment-channel.php'; ?>
+
   <!-- Start Footer Section -->
   <?php include 'components/footer.php'; ?>
   <!-- End Footer Section -->

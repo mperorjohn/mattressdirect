@@ -247,6 +247,7 @@ if (isset($response->status) && $response->status) {
         updatePagination();
     </script>
 
+    <?php include 'components/payment-channel.php'; ?>
     <!-- Start Footer Section -->
 
 		<!-- Start Footer Section -->

@@ -23,6 +23,8 @@ if (!$id) {
 // API Endpoints
 $url = $_ENV['API_ROOT_DIR'] . 'product/getProductById.php?id=' . urlencode($id);
 $size_url = $_ENV['API_ROOT_DIR'] . 'size/getSizebyProduct.php?product_id=' . urlencode($id);
+$additional_images_url = $_ENV['API_ROOT_DIR'] . 'product/getProductImages.php?id=' . urlencode($id);
+$create_size_url = $_ENV['API_ROOT_DIR'] . 'size/createSize.php';
 
 // Fetch product
 $ch = curl_init($url);
@@ -59,6 +61,68 @@ if (!$sizeResponse || !$sizeResponse->status) {
     $sizes = $sizeResponse->data;
 }
 
+$message = '';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $size = $_POST['size'];
+    $price = $_POST['price'];
+    $is_default = $_POST['is_default'];
+    $is_available = $_POST['is_available'];
+    $product_id = $_POST['product_id'];
+
+    $data = [
+        'size' => $size,
+        'price' => $price,
+        'is_default' => $is_default,
+        'is_available' => $is_available,
+        'product_id' => $product_id
+    ];
+
+    $ch = curl_init($create_size_url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    if ($result === false) {
+        $message = 'Failed to connect to API';
+    } else {
+        $response = json_decode($result, true);
+        if (!$response || !$response['status']) {
+            $message = $response['message'] ?? 'Unknown error';
+            $message = 'API returned an error: ' . $message;
+        } else {
+            $message = 'Size created successfully';
+        }
+    }
+}
+
+// Fetch additional images
+$ch = curl_init($additional_images_url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$result = curl_exec($ch);
+curl_close($ch);
+
+if ($result === false) {
+    echo json_encode(['status' => false, 'message' => 'Failed to connect to API']);
+    exit();
+}
+
+$response = json_decode($result);
+
+if ($response === null || !isset($response->status)) {
+    echo json_encode(['status' => false, 'message' => 'Invalid API response']);
+    exit();
+}
+
+if ($response->status == false) {
+    echo json_encode(['status' => false, 'message' => $response->message]);
+    exit();
+}
+
+$additional_images = isset($response->data) ? $response->data : [];
 
 ?>
 <!doctype html>
@@ -79,8 +143,9 @@ if (!$sizeResponse || !$sizeResponse->status) {
 
   <style>
     .zoom-container {
-      overflow: hidden;
-      position: relative;
+        overflow: hidden;
+        position: relative;
+        height: 610px; /* Set a fixed height for the image container */
     }
     .zoom {
       transition: transform .2s;
@@ -145,17 +210,16 @@ if (!$sizeResponse || !$sizeResponse->status) {
             <div class="related-images mt-3">
                 <div class="row justify-content-center">
                     <?php 
-                    if (is_array($product->product_image)) {
-                        $related_images = array_slice($product->product_image, 1);
-                        foreach ($related_images as $image) {
+                    if (!empty($additional_images)) {
+                        foreach ($additional_images as $image) {
                             echo '<div class="col-6 col-md-3 mb-3">
-                                    <img src="' . $image . '" class="img-fluid" alt="Related Image" style="height:200px; width:100%; object-fit:cover;">
-                                  </div>';
+                                    <img src="' . $image->image_path . '" class="img-fluid" alt="Related Image" style="height: 200px; width: 100%; object-fit: cover; cursor: pointer;">
+                                    </div>';
                         }
                     } else {
                         echo '<div class="col-6 col-md-3 mb-3">
-                                <img src="' . $product->product_image . '" class="img-fluid" alt="Related Image" style="height:200px; width:100%; object-fit:cover;">
-                              </div>';
+                                <img src="' . (is_array($product->product_image) ? $product->product_image[0] : $product->product_image) . '" class="img-fluid" alt="Related Image" style="height: 200px; width: 100%; object-fit: cover; cursor: pointer;">
+                                </div>';
                     }
                     ?>
                 </div>
@@ -198,7 +262,10 @@ if (!$sizeResponse || !$sizeResponse->status) {
                     <!-- add size -->
                     <div class="form-group mt-3">
                         <label for="size">Add Size</label>
-                        <form action="add-size.php" method="post">
+                        <?php if ($message): ?>
+                            <div class="alert alert-info"><?php echo $message; ?></div>
+                        <?php endif; ?>
+                        <form id="addSizeForm" action="" method="post">
                             <input type="hidden" name="product_id" value="<?php echo $product->id; ?>">
                             <input type="text" name="size" class="form-control" placeholder="Enter size">
                             <input type="number" name="price" class="form-control mt-2" placeholder="Enter price">
@@ -232,5 +299,17 @@ if (!$sizeResponse || !$sizeResponse->status) {
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/tiny-slider.js"></script>
 <script src="js/custom.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainImage = document.querySelector('.product-image .card-img-top');
+        const additionalImages = document.querySelectorAll('.related-images img');
+
+        additionalImages.forEach(image => {
+            image.addEventListener('click', function() {
+                mainImage.src = this.src;
+            });
+        });
+    });
+</script>
 </body>
 </html>

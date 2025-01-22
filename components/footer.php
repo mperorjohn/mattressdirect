@@ -10,19 +10,19 @@ $dotenv->load();
 
 ?>
 		<!-- Start Footer Section -->
-		<footer class="footer-section">
+		<footer class="footer-section ">
 			<div class="container relative">
 <!-- 
 				<div class="sofa-img mt-5">
 					<img src="images/sofa.png" alt="Image" class="img-fluid">
 				</div> -->
 
-				<div class="row">
+				<div class="row ">
 					<div class="col-lg-8">
 						<div class="subscription-form">
-							<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+							<h3 class="d-flex align-items-center mb-3"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
 
-							<form action="#" class="row g-3">
+							<form action="#" class="row g-3 bg-primary text-secondary py-5">
 								<div class="col-auto">
 									<input type="text" class="form-control" placeholder="Enter your name">
 								</div>
@@ -30,7 +30,7 @@ $dotenv->load();
 									<input type="email" class="form-control" placeholder="Enter your email">
 								</div>
 								<div class="col-auto">
-									<button class="btn btn-primary">
+									<button class="btn btn-secondary">Subscribe
 										<span class="fa fa-paper-plane"></span>
 									</button>
 								</div>
@@ -43,8 +43,8 @@ $dotenv->load();
 				<div class="row g-5 mb-5">
 					<div class="col-lg-4">
 						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo"><img src="images/matlogo2.png" height="50" width="auto" alt=""></a></div>
-						<p class="mb-4 fs-6 text-primary"> <span class="fw-bold">Address:</span><?php echo "  " . " " . $_ENV['APP_ADDRESS'];?></p>
-						<p class="mb-4 fs-6 text-primary"> <span class="fw-bold">Contact:</span><?php echo "  " . " " . $_ENV['APP_CONTACT'];?></p>
+						<p class="mb-4 fs-6 text-primary"> <span class="fw-bold">Address:<br></span><?php echo "  " . " " . $_ENV['APP_ADDRESS'];?></p>
+						<p class="mb-4 fs-6 text-primary"> <span class="fw-bold">Contact:<br></span><?php echo "  " . " " . $_ENV['APP_CONTACT_MAIN'];?></p>
 
 						<ul class="list-unstyled custom-social">
 							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
